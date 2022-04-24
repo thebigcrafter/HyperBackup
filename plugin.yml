@@ -1,0 +1,12 @@
+name: HyperBackup
+author: thebigcrafter
+description: HyperBackup lets you backup your PocketMine-MP server data such as plugins, worlds, and server configurations.
+version: 1.0.0-alpha
+api: 4.0.0
+main: thebigcrafter\HyperBackup\HyperBackup
+src-namespace-prefix: thebigcrafter\HyperBackup
+
+permissions:
+  hyperbackup.cmd:
+    description: Allows player to use the /hyperbackup command
+    default: op
