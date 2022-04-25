@@ -2,6 +2,10 @@
     "name": "thebigcrafter/hyperbackup",
     "description": "HyperBackup lets you backup your PocketMine-MP server data such as plugins, worlds, and server configurations.",
     "type": "project",
+    "require": {
+        "php": "^8.0",
+        "cortexpe/commando": "dev-master"
+    },
     "require-dev": {
         "pocketmine/pocketmine-mp": "^4.3",
         "phpstan/phpstan": "^1.5",
@@ -18,6 +22,5 @@
             "name": "MintoD",
             "email": "tobythedev7@outlook.com"
         }
-    ],
-    "require": {}
+    ]
 }

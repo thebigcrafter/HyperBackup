@@ -4,8 +4,43 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6f91f574dc02fa9dfa27bf8f5a9db68",
-    "packages": [],
+    "content-hash": "9bdd1e4fa03f1617093d35350057a7f8",
+    "packages": [
+        {
+            "name": "cortexpe/commando",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CortexPE/Commando.git",
+                "reference": "ede058439d2b217a0f5de86d7456a7a96d2d296f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CortexPE/Commando/zipball/ede058439d2b217a0f5de86d7456a7a96d2d296f",
+                "reference": "ede058439d2b217a0f5de86d7456a7a96d2d296f",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CortexPE\\Commando\\": [
+                        "src\\CortexPE\\Commando\\"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "description": "A Command Framework virion for PocketMine-MP ",
+            "support": {
+                "issues": "https://github.com/CortexPE/Commando/issues",
+                "source": "https://github.com/CortexPE/Commando/tree/master"
+            },
+            "time": "2022-04-04T13:57:06+00:00"
+        }
+    ],
     "packages-dev": [
         {
             "name": "adhocore/json-comment",
@@ -3299,10 +3334,14 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cortexpe/commando": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^8.0"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
 }
