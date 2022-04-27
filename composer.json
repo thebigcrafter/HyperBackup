@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "php": "^8.0",
-        "cortexpe/commando": "dev-master"
+        "cortexpe/commando": "dev-master",
+        "nelexa/zip": "^4.0"
     },
     "require-dev": {
         "pocketmine/pocketmine-mp": "^4.3",
