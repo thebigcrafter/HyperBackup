@@ -11,21 +11,15 @@ use pocketmine\utils\Config;
 use pocketmine\utils\SingletonTrait;
 use pocketmine\utils\TextFormat;
 use thebigcrafter\HyperBackup\commands\BackupCommand;
+use thebigcrafter\HyperBackup\utils\SingletonPattern;
 
 class HyperBackup extends PluginBase {
 
-	use SingletonTrait;
+	use SingletonPattern;
 
 	public static string $PREFIX = TextFormat::WHITE . "[" . TextFormat::BLUE . "HyperBackup" . TextFormat::WHITE . "] " . TextFormat::RESET;
 
-	/** @var Config */
 	public Config $config;
-
-	/** @return self */
-	public static function getInstance(): self
-	{
-		return self::$instance;
-	}
 
 	/** @return void */
 	protected function onEnable(): void
