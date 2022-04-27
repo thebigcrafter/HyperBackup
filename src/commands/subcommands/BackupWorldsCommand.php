@@ -12,6 +12,14 @@ use thebigcrafter\HyperBackup\tasks\Archiver;
 class BackupWorldsCommand extends BaseSubCommand
 {
 
+	/**
+	 * @param CommandSender $sender
+	 * @param string $aliasUsed
+	 * @param array<string> $args
+	 *
+	 * @return void
+	 */
+
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args): void
 	{
 		$dataPath = realpath(HyperBackup::getInstance()->getServer()->getDataPath()) . "/";
@@ -23,7 +31,14 @@ class BackupWorldsCommand extends BaseSubCommand
 
 		$sender->sendMessage("Archive created successfully in " . round(microtime(true) - $start, 4) . " seconds");
 
-		$data = base64_encode(file_get_contents($worldsBackupFile));
+		$fileContents = file_get_contents($worldsBackupFile);
+
+		if($fileContents === false) {
+			$sender->sendMessage("Something went wrong while creating the archive");
+			return;
+		}
+
+		$data = base64_encode($fileContents);
 
 		echo $data;
 		// TODO: Upload it to mysql db

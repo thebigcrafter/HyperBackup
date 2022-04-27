@@ -10,6 +10,14 @@ use thebigcrafter\HyperBackup\commands\subcommands\BackupWorldsCommand;
 
 class BackupCommand extends BaseCommand
 {
+	/**
+	 * @param CommandSender $sender
+	 * @param string $aliasUsed
+	 * @param array<string> $args
+	 *
+	 * @return void
+	 */
+
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args): void
 	{
 		$this->sendUsage();
