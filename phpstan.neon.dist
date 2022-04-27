@@ -1,0 +1,7 @@
+parameters:
+	level: 9
+	paths:
+		- src
+	scanDirectories:
+		- vendor/cortexpe/commando/src
+		- vendor/nelexa/zip/src

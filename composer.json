@@ -18,6 +18,9 @@
             "thebigcrafter\\HyperBackup\\": "src/"
         }
     },
+	"scripts": {
+		"analyse": "./vendor/bin/phpstan analyse -c phpstan.neon.dist"
+	},
     "authors": [
         {
             "name": "MintoD",
