@@ -1,0 +1,28 @@
+name: PHPStan
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: PHPStan analysis
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php:
+          - "8.0"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@2.15.0
+        with:
+          php-version: ${{ matrix.php }}
+
+      - name: Install PHPStan Composer dependencies
+        run: composer install --prefer-dist --no-interaction --ignore-platform-reqs
+
+      - name: Run PHPStan analysis
+        run: composer run-script analyse
