@@ -5,4 +5,6 @@ branches:
 projects:
   HyperBackup:
     path: ""
+    lint:
+      phpstan: false
 ...

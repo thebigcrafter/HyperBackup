@@ -7,7 +7,6 @@ namespace thebigcrafter\HyperBackup\tasks;
 use PhpZip\Exception\ZipException;
 use PhpZip\ZipFile;
 use pocketmine\scheduler\Task;
-use thebigcrafter\HyperBackup\HyperBackup;
 
 class Archiver extends Task
 {

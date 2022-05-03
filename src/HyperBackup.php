@@ -8,7 +8,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
-use pocketmine\utils\SingletonTrait;
 use pocketmine\utils\TextFormat;
 use thebigcrafter\HyperBackup\commands\BackupCommand;
 use thebigcrafter\HyperBackup\utils\SingletonPattern;
