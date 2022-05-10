@@ -26,8 +26,10 @@ class BackupWorldsCommand extends BaseSubCommand
 		$worldsBackupFile = $dataPath . "backups/worlds";
 
 		$start = microtime(true);
+		
+		$password = isset($args[0]) ? $args[0] : "HyperBackup";
 
-		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $dataPath . $worldsBackupFile));
+		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $dataPath . $worldsBackupFile, $password));
 
 		$sender->sendMessage("Archive created successfully in " . round(microtime(true) - $start, 4) . " seconds");
 
