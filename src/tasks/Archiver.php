@@ -13,7 +13,7 @@ class Archiver extends Task
 
 	private string $inputFolder;
 	private string $outputFilename;
-	private string $password
+	private string $password;
 
 	public function __construct(string $inputFolder, string $outputPath, string $password)
 	{
