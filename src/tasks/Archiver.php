@@ -19,7 +19,7 @@ class Archiver extends Task
 	{
 		$this->inputFolder = $inputFolder;
 		$this->outputFilename = $outputPath;
-		$this->password = $password
+		$this->password = $password;
 	}
 
 	public function onRun(): void
