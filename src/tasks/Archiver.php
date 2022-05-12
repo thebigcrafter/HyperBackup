@@ -13,11 +13,13 @@ class Archiver extends Task
 
 	private string $inputFolder;
 	private string $outputFilename;
+	private string $password;
 
-	public function __construct(string $inputFolder, string $outputPath)
+	public function __construct(string $inputFolder, string $outputPath, string $password)
 	{
 		$this->inputFolder = $inputFolder;
 		$this->outputFilename = $outputPath;
+		$this->password = $password;
 	}
 
 	public function onRun(): void
@@ -27,7 +29,7 @@ class Archiver extends Task
 		try {
 			$zip->addDir($this->inputFolder);
 			$zip->saveAsFile($this->outputFilename);
-			$zip->setPassword("HyperBackup");
+			$zip->setPassword($this->password);
 			$zip->close();
 		} catch (ZipException $e) {
 			echo $e->getMessage();
