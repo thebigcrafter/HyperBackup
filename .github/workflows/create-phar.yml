@@ -16,16 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up PHP environment
+      - name: Set up PHP 8.0 environment
         uses: shivammathur/setup-php@2.15.0
         with:
           php-version: ${{ matrix.php }}
 
-      - name: Install PHPStan Composer dependencies
+      - name: Install build Composer dependencies
         run: composer install --ignore-platform-reqs --no-dev
         
-      - name: Download ConsoleScript.php
-        run: curl -o ../ConsoleScript.php https://raw.githubusercontent.com/pmmp/DevTools/master/src/ConsoleScript.php
+      - name: Download pinned DevTools ConsoleScript
+        run: curl -o ../ConsoleScript.php https://raw.githubusercontent.com/pmmp/DevTools/a67f9af8d6cff1615975c68a9b171a8f09aac0c4/src/ConsoleScript.php
         
       - name: Create build directory
         run: mkdir build
