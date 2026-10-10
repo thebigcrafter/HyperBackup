@@ -1,6 +1,6 @@
 {
     "name": "thebigcrafter/hyperbackup",
-    "description": "HyperBackup lets you backup your PocketMine-MP server data such as plugins, worlds, and server configurations.",
+    "description": "HyperBackup creates password-protected ZIP archives of the worlds directory for PocketMine-MP servers.",
     "type": "project",
     "repositories": [
         {
