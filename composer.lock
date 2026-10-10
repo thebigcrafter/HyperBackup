@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "thebigcrafter/commando",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thebigcrafter/Commando.git",
-                "reference": "963f7c0162ac195f76bfec0cfc7810164e4007b4"
+                "reference": "b2f0028217edd05cfe536bc25a35938a289b04f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thebigcrafter/Commando/zipball/963f7c0162ac195f76bfec0cfc7810164e4007b4",
-                "reference": "963f7c0162ac195f76bfec0cfc7810164e4007b4",
+                "url": "https://api.github.com/repos/thebigcrafter/Commando/zipball/b2f0028217edd05cfe536bc25a35938a289b04f4",
+                "reference": "b2f0028217edd05cfe536bc25a35938a289b04f4",
                 "shasum": ""
             },
             "require": {
@@ -49,9 +49,9 @@
             ],
             "description": "A command framework virion for PocketMine-MP",
             "support": {
-                "source": "https://github.com/thebigcrafter/Commando/tree/3.3.1"
+                "source": "https://github.com/thebigcrafter/Commando/tree/3.3.2"
             },
-            "time": "2026-10-10T05:20:41+00:00"
+            "time": "2026-10-10T16:35:10+00:00"
         }
     ],
     "packages-dev": [
