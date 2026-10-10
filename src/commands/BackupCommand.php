@@ -25,6 +25,7 @@ class BackupCommand extends BaseCommand
 
 	protected function prepare(): void
 	{
+		$this->setPermission("hyperbackup.cmd");
 		$this->registerSubCommand(new BackupWorldsCommand("worlds", "Backup worlds", ["w"]));
 	}
 }

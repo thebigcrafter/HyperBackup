@@ -1,39 +1,18 @@
-name: Build plugin PHAR
+name: Build and validate plugin
 
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
-    name: Build plugin PHAR
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        php:
-          - "8.1"
-
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-
-      - name: Set up PHP 8.1 environment
-        uses: shivammathur/setup-php@daf6ef8034382aea2c4e1521ead10758419b02cf
-        with:
-          php-version: ${{ matrix.php }}
-
-      - name: Install build Composer dependencies
-        run: composer install --ignore-platform-reqs --no-dev
-        
-      - name: Download pinned DevTools ConsoleScript
-        run: curl -o ../ConsoleScript.php https://raw.githubusercontent.com/pmmp/DevTools/a67f9af8d6cff1615975c68a9b171a8f09aac0c4/src/ConsoleScript.php
-        
-      - name: Create build directory
-        run: mkdir build
-        
-      - name: Build plugin PHAR with ConsoleScript
-        run: php -dphar.readonly=0 ../ConsoleScript.php --make plugin.yml,src,resources,vendor --out build/HyperBackup.phar
-        
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: HyperBackup
-          path: build/HyperBackup.phar
+    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@6606444fc32787a3e50275fdb668c2310e899740
+    with:
+      php-version: '8.1'
+      prepare-dependencies: true
+      virions: .devtools-virions
+      retention-days: 14

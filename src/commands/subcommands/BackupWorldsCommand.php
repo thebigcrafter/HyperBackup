@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace thebigcrafter\HyperBackup\commands\subcommands;
 
 use CortexPE\Commando\BaseSubCommand;
+use CortexPE\Commando\args\RawStringArgument;
 use pocketmine\command\CommandSender;
 use thebigcrafter\HyperBackup\HyperBackup;
 use thebigcrafter\HyperBackup\tasks\Archiver;
@@ -23,30 +24,19 @@ class BackupWorldsCommand extends BaseSubCommand
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args): void
 	{
 		$dataPath = realpath(HyperBackup::getInstance()->getServer()->getDataPath()) . "/";
-		$worldsBackupFile = $dataPath . "backups/worlds";
+		$worldsBackupFile = $dataPath . "backups/worlds.zip";
 
 		$start = microtime(true);
 		
-		$password = isset($args[0]) ? $args[0] : "HyperBackup";
+		$password = $args["password"] ?? "HyperBackup";
 
-		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $dataPath . $worldsBackupFile, $password));
+		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $worldsBackupFile, $password));
 
-		$sender->sendMessage("Archive created successfully in " . round(microtime(true) - $start, 4) . " seconds");
-
-		$fileContents = file_get_contents($worldsBackupFile);
-
-		if($fileContents === false) {
-			$sender->sendMessage("Something went wrong while creating the archive");
-			return;
-		}
-
-		$data = base64_encode($fileContents);
-
-		echo $data;
-		// TODO: Upload it to mysql db
+		$sender->sendMessage("World backup scheduled in " . round(microtime(true) - $start, 4) . " seconds");
 	}
 
 	protected function prepare(): void
 	{
+		$this->registerArgument(0, new RawStringArgument("password", optional: true));
 	}
 }

@@ -3,5 +3,4 @@ parameters:
     paths:
         - src
     scanDirectories:
-        - vendor/cortexpe/commando/src
-        - vendor/nelexa/zip/src
+        - vendor/thebigcrafter/commando/src

@@ -2,10 +2,16 @@
     "name": "thebigcrafter/hyperbackup",
     "description": "HyperBackup lets you backup your PocketMine-MP server data such as plugins, worlds, and server configurations.",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/thebigcrafter/Commando.git"
+        }
+    ],
     "require": {
         "php": "^8.1",
-        "cortexpe/commando": "dev-master",
-        "nelexa/zip": "^4.0"
+        "thebigcrafter/commando": "^3.3",
+        "ext-zip": "*"
     },
     "require-dev": {
         "pocketmine/pocketmine-mp": "^5.44.3",
