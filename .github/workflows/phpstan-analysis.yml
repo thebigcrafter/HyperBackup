@@ -11,12 +11,12 @@ jobs:
     strategy:
       matrix:
         php:
-          - "8.0"
+          - "8.1"
 
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
-      - name: Set up PHP 8.0 environment
+      - name: Set up PHP 8.1 environment
         uses: shivammathur/setup-php@daf6ef8034382aea2c4e1521ead10758419b02cf
         with:
           php-version: ${{ matrix.php }}

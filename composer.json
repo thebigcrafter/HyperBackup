@@ -3,13 +3,13 @@
     "description": "HyperBackup lets you backup your PocketMine-MP server data such as plugins, worlds, and server configurations.",
     "type": "project",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "cortexpe/commando": "dev-master",
         "nelexa/zip": "^4.0"
     },
     "require-dev": {
-        "pocketmine/pocketmine-mp": "^4.3",
-        "phpstan/phpstan": "^1.5",
+        "pocketmine/pocketmine-mp": "^5.44.3",
+        "phpstan/phpstan": "^2.1",
         "friendsofphp/php-cs-fixer": "^3.8"
     },
     "license": "GPL-3.0-only",
