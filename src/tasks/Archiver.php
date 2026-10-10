@@ -87,7 +87,10 @@ class Archiver extends Task
 			$temporaryFilename = null;
 		} catch(Throwable $e) {
 			if($zip instanceof ZipArchive) {
-				$zip->close();
+				try {
+					$zip->close();
+				} catch(Throwable) {
+				}
 			}
 			if($temporaryFilename !== null && is_file($temporaryFilename)) {
 				unlink($temporaryFilename);
