@@ -64,7 +64,7 @@ class Archiver extends Task
 					continue;
 				}
 				$path = $file->getPathname();
-				$relative = ltrim(substr($path, strlen($root)), DIRECTORY_SEPARATOR);
+				$relative = str_replace(DIRECTORY_SEPARATOR, "/", ltrim(substr($path, strlen($root)), DIRECTORY_SEPARATOR));
 				if($file->isDir()) {
 					$zip->addEmptyDir($relative);
 					continue;

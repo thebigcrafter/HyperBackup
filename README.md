@@ -39,7 +39,6 @@ Install the locked development dependencies and run the available checks:
 ```sh
 composer install
 composer analyse
-composer run-script build
 ```
 
 The build workflow uses [DevTools](https://github.com/NhanAZ/DevTools) to package and validate the plugin PHAR. The workflow pins the builder revision used by CI; this README names the tool without copying the CI pin into user-facing documentation.
