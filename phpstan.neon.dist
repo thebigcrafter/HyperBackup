@@ -1,5 +1,7 @@
 parameters:
     level: max
+    bootstrapFiles:
+        - vendor/axolotl-pm/pocketmine-mp/tests/phpstan/bootstrap.php
     paths:
         - src
     scanDirectories:
