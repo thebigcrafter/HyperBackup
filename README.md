@@ -30,7 +30,16 @@ The archive is written to `backups/worlds.zip` under the PocketMine-MP server da
 
 The backup task runs on the server thread, so large worlds can pause normal ticks while they are archived. Loaded worlds are saved first. For each loaded LevelDB world, HyperBackup exports a consistent LevelDB snapshot and archives that snapshot instead of reading the database files held open by the server. Other world files are read from disk during the same task; avoid changing them from outside the server until the backup finishes.
 
-The current implementation has no restore workflow. Verify the archive separately before treating it as a recovery copy, and preserve the original server data until a restoration procedure has been tested.
+The plugin does not provide an in-game restore command. The manual procedure below was tested with an isolated server and the PHP `ZipArchive` extension used to create the archive.
+
+## Manual restore
+
+1. Stop the server completely and keep an untouched copy of `backups/worlds.zip`. The next backup replaces that path.
+2. Enter the backup password and extract the archive into a new, empty staging directory with PHP `ZipArchive` or another tool that supports AES-256-encrypted ZIP entries. The archive contains each world as `<world-folder>/...`; extracting into `<staging-directory>` creates one directory per backed-up world.
+3. Keep the current `<server-data>/worlds` directory intact by moving it outside the active `worlds` path, for example to `worlds-before-restore`. Move the extracted staging directory into `<server-data>/worlds`; do not merge it into an active world directory.
+4. Start the server and confirm the expected worlds load without errors. Keep the original archive and the moved-aside world data until the restored worlds have been checked.
+
+This archive contains world data only. It does not restore plugins, configuration, databases outside the world directories, or `plugin_data`.
 
 ## Build and test
 
