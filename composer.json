@@ -5,6 +5,11 @@
     "repositories": [
         {
             "type": "vcs",
+            "url": "https://github.com/axolotl-pm/PocketMine-MP",
+            "no-api": true
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/thebigcrafter/Commando.git"
         }
     ],
@@ -14,7 +19,7 @@
         "ext-zip": "*"
     },
     "require-dev": {
-        "pocketmine/pocketmine-mp": "^5.44.3",
+        "axolotl-pm/pocketmine-mp": "5.49.1",
         "phpstan/phpstan": "^2.1",
         "friendsofphp/php-cs-fixer": "^3.8"
     },
