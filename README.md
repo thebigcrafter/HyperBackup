@@ -28,7 +28,7 @@ The archive is written to `backups/worlds.zip` under the PocketMine-MP server da
 
 ## Safe backup operation
 
-The backup task reads world files while the server is running. For a consistent backup, use a maintenance window and ensure that the relevant worlds are not being written while the archive is created. On Windows, an open LevelDB file can prevent the ZIP archive from being finalized; a backup failure is logged rather than reported as a successful archive.
+The backup task runs on the server thread, so large worlds can pause normal ticks while they are archived. Loaded worlds are saved first. For each loaded LevelDB world, HyperBackup exports a consistent LevelDB snapshot and archives that snapshot instead of reading the database files held open by the server. Other world files are read from disk during the same task; avoid changing them from outside the server until the backup finishes.
 
 The current implementation has no restore workflow. Verify the archive separately before treating it as a recovery copy, and preserve the original server data until a restoration procedure has been tested.
 
