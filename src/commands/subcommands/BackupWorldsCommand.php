@@ -30,7 +30,8 @@ class BackupWorldsCommand extends BaseSubCommand
 		
 		$password = $args["password"] ?? "HyperBackup";
 
-		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $worldsBackupFile, $password));
+		$worlds = HyperBackup::getInstance()->getServer()->getWorldManager()->getWorlds();
+		HyperBackup::getInstance()->getScheduler()->scheduleTask(new Archiver($dataPath . "worlds", $worldsBackupFile, $password, $worlds));
 
 		$sender->sendMessage("World backup scheduled in " . round(microtime(true) - $start, 4) . " seconds");
 	}
