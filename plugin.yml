@@ -1,7 +1,7 @@
 name: HyperBackup
 author: thebigcrafter
 description: HyperBackup creates password-protected ZIP archives of the worlds directory.
-version: 1.0.0-alpha
+version: 1.0.0-alpha.1
 api: 5.0.0
 main: thebigcrafter\HyperBackup\HyperBackup
 src-namespace-prefix: thebigcrafter\HyperBackup
