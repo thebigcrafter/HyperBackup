@@ -69,6 +69,13 @@ final class LevelDBSnapshotExporter{
 			if($batch instanceof \LevelDBWriteBatch){
 				$batch->clear();
 			}
+			if($target instanceof \LevelDB){
+				// The extension normally closes databases during destruction, but that can leave
+				// Windows file handles alive while the archive queues the snapshot files.
+				// close() is deprecated by the extension because destruction is preferred, so
+				// suppress only that compatibility warning after explicitly releasing the handle.
+				@$target->close();
+			}
 			unset($batch, $target);
 			$snapshot->release();
 			unset($snapshot);
