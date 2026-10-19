@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@3dedda2a1f6e42885aa680aaadeebacbc0f62733
+    uses: NhanAZ/DevTools/.github/workflows/build-plugin.yml@34529468f84c6db54c0160f8331eca603fbe6013
     with:
       php-version: '8.1'
       prepare-dependencies: true
