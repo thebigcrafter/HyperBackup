@@ -19,7 +19,7 @@
         "ext-zip": "*"
     },
     "require-dev": {
-        "axolotl-pm/pocketmine-mp": "5.49.1",
+        "axolotl-pm/pocketmine-mp": "5.51.0",
         "phpstan/phpstan": "^2.1",
         "friendsofphp/php-cs-fixer": "^3.8"
     },
