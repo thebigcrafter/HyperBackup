@@ -50,7 +50,7 @@ composer install
 composer analyse
 ```
 
-The build workflow uses [DevTools](https://github.com/AxolotlBucketLabs/DevTools) to package and validate the plugin PHAR. The workflow pins the builder revision used by CI; this README names the tool without copying the CI pin into user-facing documentation.
+The build workflow uses [DevTools](https://github.com/AxolotlBucketLabs/DevTools) to package and validate the plugin PHAR. The workflow uses the maintained DevTools latest channel used by CI; this README names the tool without copying the CI pin into user-facing documentation.
 
 Before a release, inspect the PHAR manifest and test the plugin in an isolated PocketMine-MP server data directory. Do not run backup tests against a live production world or database.
 
